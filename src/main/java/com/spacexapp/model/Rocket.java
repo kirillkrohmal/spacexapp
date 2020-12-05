@@ -3,21 +3,17 @@ package com.spacexapp.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "rockets")
+
 public class Rocket {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id")
+
     public int id;
 
-    @Column(name = "rocket_id")
+
     public String rocket_id;
 
-    @Column(name = "rocket_name")
+
     public String rocket_name;
 
-    @Column(name = "rocket_type")
     public String rocket_type;
 
     public Rocket() {

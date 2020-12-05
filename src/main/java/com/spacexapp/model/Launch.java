@@ -3,21 +3,15 @@ package com.spacexapp.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "launches")
+
 public class Launch {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id")
+
     public int id;
 
-    @Column(name = "mission_name")
     public String mission_name;
 
-    @Column(name = "launch_year")
     public int launch_year;
 
-    @Column(name = "links")
     public String[] links;
 
     public Launch() {

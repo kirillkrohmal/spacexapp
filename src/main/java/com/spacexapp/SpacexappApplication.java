@@ -13,18 +13,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @SpringBootApplication
 public class SpacexappApplication {
 
-	public static void main(String[] args) throws IOException {
-		//SpringApplication.run(SpacexappApplication.class, args);
+	public static void main(String[] args) {
+		SpringApplication.run (SpacexappApplication.class, args);
 
-		JSONArray rockets = getJsonArray ("https://api.spacexdata.com/v3/rockets");
+		/*JSONArray rockets = getJsonArray ("https://api.spacexdata.com/v3/rockets");
 		JSONArray launches = getJsonArray ("https://api.spacexdata.com/v3/launches");
 
 		List<Rocket> rocketNames = new ArrayList<> ();
@@ -38,10 +35,8 @@ public class SpacexappApplication {
 			rocket.rocket_type = rocketJson.getString ("rocket_type");
 
 			rocketNames.add(rocket);
-
+			//System.out.println(rocket.rocket_id);
 		}
-
-		System.out.println ("size=" + rocketNames.size());
 
 		Map<String, List<Launch>> launchesOfRockets = new HashMap<> ();
 
@@ -56,14 +51,17 @@ public class SpacexappApplication {
 				if (!id.equals(rocketName.rocket_id)) {
 					continue;
 				}
+				Launch launch = new Launch();
 
-				Launch launch = new Launch ();
+
+
 
 				launch.mission_name = launchJson.getString("mission_name");
 				launch.launch_year = launchJson.getInt("launch_year");
+				//launch.links = launchJson.getJSONObject("0").getJSONArray("links");
 				l4r.add (launch);
-				//launch.links = launchJson.getString("links");
-				System.out.println(rocketName.rocket_name + " " + launch.mission_name);
+
+				//System.out.println(launch.mission_name + " " +  launch.launch_year + " " + launch.links);
 			}
 			launchesOfRockets.put(rocketName.rocket_id, l4r);
 		}
@@ -81,7 +79,6 @@ public class SpacexappApplication {
 
 		//String pageName = obj.getJSONObject("pageInfo").getString("pageName");
 
-		//System.out.println(pageName);
-
+	}*/
 	}
 }
