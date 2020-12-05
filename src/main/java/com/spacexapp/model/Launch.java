@@ -2,6 +2,7 @@ package com.spacexapp.model;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "launches")
@@ -18,12 +19,12 @@ public class Launch {
     public int launch_year;
 
     @Column(name = "links")
-    public String[] links;
+    public List<String> links;
 
     public Launch() {
     }
 
-    public Launch(String mission_name, int launch_year, String[] links) {
+    public Launch(String mission_name, int launch_year, List<String> links) {
         this.mission_name = mission_name;
         this.launch_year = launch_year;
         this.links = links;
@@ -53,11 +54,11 @@ public class Launch {
         this.launch_year = launch_year;
     }
 
-    public String[] getLinks() {
+    public List<String> getLinks() {
         return links;
     }
 
-    public void setLinks(String[] links) {
+    public void setLinks(List<String> links) {
         this.links = links;
     }
 }
