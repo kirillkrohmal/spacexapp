@@ -1,5 +1,3 @@
-
-
 CREATE TABLE rockets
 (
   id int UNIQUE NOT NULL,

@@ -17,9 +17,6 @@ import java.util.*;
 
 @SpringBootApplication
 public class SpacexappApplication {
-
-
-
 	public static void main(String[] args) {
 		SpringApplication.run (SpacexappApplication.class, args);
 	}

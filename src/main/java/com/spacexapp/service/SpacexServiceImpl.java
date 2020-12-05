@@ -8,7 +8,6 @@ import com.spacexapp.repository.SpacexRocketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 
 @Repository
 public class SpacexServiceImpl implements SpacexService {
@@ -22,12 +21,19 @@ public class SpacexServiceImpl implements SpacexService {
     }
 
     @Override
-    public Rocket saveRocket(Rocket rocket) {
-        return spacexRocketRepository.save(rocket);
+    public void saveRocket(Rocket rocket) {
+        spacexRocketRepository.save(rocket);
     }
 
     @Override
-    public Launch saveLaunches(Launch launch) {
-        return spacexLaunchesRepository.save (launch);
+    public void saveLaunches(Launch launch) {
+        spacexLaunchesRepository.save(launch);
     }
+
+    @Override
+    public void findById(int id) {
+        spacexRocketRepository.findById(id);
+    }
+
+
 }

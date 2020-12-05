@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SpacexRocketRepository extends JpaRepository<Rocket, Integer> {
 
-
 }

@@ -16,6 +16,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -34,8 +36,7 @@ public class SpacexApiController {
     private JSONArray launches = getJsonArray ("https://api.spacexdata.com/v3/launches");
 
     @GetMapping("rocketid")
-    public Rocket rocketsId() {
-        Rocket rocket = new Rocket();
+    public Rocket rocketsId(Rocket rocket) {
         for (int i = 0; i < rockets.length (); i++) {
             JSONObject rocketJson = rockets.getJSONObject (i);
 
@@ -52,10 +53,11 @@ public class SpacexApiController {
     }
 
     @GetMapping("launches/{rocket_id}")
-    public Launch getLaunchesByRocketId() {
+    public Launch getLaunchesByRocketId(@PathVariable(value = "rocket_id") int rocket_id, Launch launch) {
         List<Rocket> rocketNames = new ArrayList<> ();
-        Launch launch = new Launch ();
         List<Launch> l4r = new ArrayList<> ();
+
+        spacexService.findById(rocket_id);
 
         for (Rocket rocketName : rocketNames) {
             for (int i = 0; i < launches.length (); i++) {
