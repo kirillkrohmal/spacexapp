@@ -4,8 +4,6 @@ CREATE TABLE rockets
 (
   id int UNIQUE NOT NULL,
   rocket_id character varying(2000),
-  rocket_name character varying(2000),
-  rocket_type character varying(2000),
   CONSTRAINT rockets_pkey PRIMARY KEY (id)
 );
 
