@@ -1,17 +1,8 @@
-CREATE TABLE rockets
+CREATE TABLE requests
 (
   id int UNIQUE NOT NULL,
-  rocket_id character varying(2000),
-  CONSTRAINT rockets_pkey PRIMARY KEY (id)
-);
-
-CREATE TABLE launches
-(
-  id int UNIQUE NOT NULL,
-  rocket_id int NOT NULL,
-  mission_name character varying(2000),
-  launch_year int,
-  links character varying(2000),
-  CONSTRAINT launches_pkey PRIMARY KEY (id),
-  CONSTRAINT rocket_fkey FOREIGN KEY (rocket_id) REFERENCES rockets(id)
+  ts timestamp default current_timestamp,
+  data character varying(2000),
+  path character varying(2000),
+  CONSTRAINT requests_pkey PRIMARY KEY (id)
 );

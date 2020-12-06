@@ -1,39 +1,23 @@
 package com.spacexapp.service;
 
 
-import com.spacexapp.model.Launch;
-import com.spacexapp.model.Rocket;
-import com.spacexapp.repository.SpacexLaunchesRepository;
-import com.spacexapp.repository.SpacexRocketRepository;
+import com.spacexapp.model.Requests;
+import com.spacexapp.repository.SpacexRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
 public class SpacexServiceImpl implements SpacexService {
-    private SpacexRocketRepository spacexRocketRepository;
-    private SpacexLaunchesRepository spacexLaunchesRepository;
+    private SpacexRepository spacexRepository;
 
     @Autowired
-    public SpacexServiceImpl(SpacexRocketRepository spacexRepository, SpacexLaunchesRepository spacexLaunchesRepository) {
-        this.spacexRocketRepository = spacexRepository;
-        this.spacexLaunchesRepository = spacexLaunchesRepository;
+    public SpacexServiceImpl(SpacexRepository spacexRepository) {
+        this.spacexRepository = spacexRepository;
     }
 
     @Override
-    public void saveRocket(Rocket rocket) {
-        spacexRocketRepository.save(rocket);
+    public void saveRequest(Requests requests) {
+        spacexRepository.save(requests);
     }
-
-    @Override
-    public void saveLaunches(Launch launch) {
-        spacexLaunchesRepository.save(launch);
-    }
-
-    @Override
-    public void findById(int id) {
-        spacexRocketRepository.findById(id);
-    }
-
-
 }

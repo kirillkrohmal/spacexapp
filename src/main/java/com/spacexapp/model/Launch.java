@@ -1,64 +1,36 @@
 package com.spacexapp.model;
 
+import java.util.Map;
 
-import javax.persistence.*;
-import java.util.List;
-
-@Entity
-@Table(name = "launches")
 public class Launch {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id")
-    public int id;
+    private final String missionName;
+    private final int launchYear;
+    private final Map<String, String> links;
 
-    @Column(name = "mission_name")
-    public String mission_name;
-
-    @Column(name = "launch_year")
-    public int launch_year;
-
-    @Column(name = "links")
-    public List<String> links;
-
-    public Launch() {
-    }
-
-    public Launch(String mission_name, int launch_year, List<String> links) {
-        this.mission_name = mission_name;
-        this.launch_year = launch_year;
+    public Launch(int launchYear, String missionName, Map<String, String> links) {
+        this.launchYear = launchYear;
+        this.missionName = missionName;
         this.links = links;
     }
 
-    public int getId() {
-        return id;
+    public int getLaunchYear() {
+        return launchYear;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getMissionName() {
+        return missionName;
     }
 
-    public String getMission_name() {
-        return mission_name;
-    }
-
-    public void setMission_name(String mission_name) {
-        this.mission_name = mission_name;
-    }
-
-    public int getLaunch_year() {
-        return launch_year;
-    }
-
-    public void setLaunch_year(int launch_year) {
-        this.launch_year = launch_year;
-    }
-
-    public List<String> getLinks() {
+    public Map<String, String> getLinks() {
         return links;
     }
 
-    public void setLinks(List<String> links) {
-        this.links = links;
+    @Override
+    public String toString() {
+        return "Launch{" +
+                "missionName='" + missionName + '\'' +
+                ", launchYear=" + launchYear +
+                ", links=" + links +
+                '}';
     }
 }
