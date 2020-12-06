@@ -2,7 +2,9 @@ package com.spacexapp.model;
 
 
 import javax.persistence.*;
+import javax.xml.crypto.Data;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Map;
 
 @Entity
@@ -13,15 +15,11 @@ public class Requests {
     @Column(name = "id")
     public int id;
 
-    @Column(name = "ts")
     private Timestamp ts;
 
-    @Column(name = "data")
     private String data;
 
-    @Column(name = "path")
     private String path;
-
 
     public int getId() {
         return id;
@@ -31,18 +29,10 @@ public class Requests {
         this.id = id;
     }
 
-    public Requests(Timestamp ts, String data, String path) {
-        this.ts = ts;
-        this.data = data;
+    public Requests(String path, String data, Timestamp ts) {
+        this.ts = new Timestamp(new Date().getTime());
         this.path = path;
-    }
-
-    public Timestamp getTs() {
-        return ts;
-    }
-
-    public void setTs(Timestamp ts) {
-        this.ts = ts;
+        this.data = data;
     }
 
     public String getData() {

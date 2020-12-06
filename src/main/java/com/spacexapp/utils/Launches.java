@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Launches {
-
     private final Map<String, List<Launch>> launchesByRocket = new HashMap<> ();
 
     public Launches(JSONArray jsonLaunches) {
