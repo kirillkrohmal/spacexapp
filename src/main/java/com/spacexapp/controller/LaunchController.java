@@ -2,7 +2,6 @@ package com.spacexapp.controller;
 
 import com.spacexapp.model.Launch;
 import com.spacexapp.model.Requests;
-import com.spacexapp.model.Rockets;
 import com.spacexapp.service.SpacexServiceImpl;
 import com.spacexapp.utils.Launches;
 import org.springframework.beans.factory.annotation.Autowired;

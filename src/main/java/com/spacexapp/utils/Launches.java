@@ -2,7 +2,6 @@ package com.spacexapp.utils;
 
 
 import com.spacexapp.model.Launch;
-import com.spacexapp.model.Rockets;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,7 +27,6 @@ public class Launches {
             for (String key : jsonLinks.keySet()) {
                 if (jsonLinks.isNull(key)) continue;
                 if (!key.equals("flickr_images")) {
-                    // TODO: process the array for flickr_images
                     try {
                         String value = jsonLinks.getString(key);
                         links.put(key, value);

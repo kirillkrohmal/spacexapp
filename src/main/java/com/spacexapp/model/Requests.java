@@ -2,10 +2,8 @@ package com.spacexapp.model;
 
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Map;
 
 @Entity
 @Table(name = "requests")
